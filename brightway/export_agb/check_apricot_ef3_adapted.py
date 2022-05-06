@@ -14,6 +14,13 @@ if __name__ == "__main__":
     agb = open_db("agribalyse3")
     apricot = agb.search("[Ciqual code: 13712]")[0]
 
+    # DEBUG
+    biosphere = bw.Database('biosphere3')
+    import ipdb
+    ipdb.set_trace()
+
+    # END DEBUG
+
     demand = {apricot: 1}
 
     for key, method in impacts.items():

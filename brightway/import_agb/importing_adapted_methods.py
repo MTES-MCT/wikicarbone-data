@@ -10,17 +10,20 @@ def main():
     print("Importing the adapted methods in the brightway database...")
     importer = bw.SimaProLCIACSVImporter(methods_csv_filepath, "agribalyse3")
 
-    importer.apply_strategies()
-    importer.statistics()
+    # importer.apply_strategies()
+    # importer.statistics()
 
-    print("Adding missing characterization factors")
-    importer.add_missing_cfs()
-    importer.statistics()
+    # print("Adding missing characterization factors")
+    # importer.add_missing_cfs()
+    # importer.statistics()
 
-    print("Dropping unlinked")
-    importer.drop_unlinked()
+    # print("Dropping unlinked")
+    # importer.drop_unlinked()
 
-    importer.write_methods()
+    for e in list(importer.unlinked)[:20]:
+        print(f"{e['name']} ({e['unit']}): {e['categories']}")
+
+    # importer.write_methods()
 
 
 if __name__ == "__main__":
