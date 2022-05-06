@@ -1,68 +1,55 @@
 impacts = {
-    "acd": ("EF v3.0", "acidification", "accumulated exceedance (ae)"),
-    "ozd": ("EF v3.0", "ozone depletion", "ozone depletion potential (ODP) "),
-    "cch": ("EF v3.0", "climate change", "global warming potential (GWP100)"),
-    "ccb": ("EF v3.0", "climate change: biogenic", "global warming potential (GWP100)"),
-    "ccf": ("EF v3.0", "climate change: fossil", "global warming potential (GWP100)"),
-    "ccl": (
-        "EF v3.0",
-        "climate change: land use and land use change",
-        "global warming potential (GWP100)",
-    ),
-    "fwe": (
-        "EF v3.0",
-        "eutrophication: freshwater",
-        "fraction of nutrients reaching freshwater end compartment (P)",
-    ),
-    "swe": (
-        "EF v3.0",
-        "eutrophication: marine",
-        "fraction of nutrients reaching marine end compartment (N)",
-    ),
-    "tre": ("EF v3.0", "eutrophication: terrestrial", "accumulated exceedance (AE) "),
-    "pco": (
-        "EF v3.0",
-        "photochemical ozone formation: human health",
-        "tropospheric ozone concentration increase",
-    ),
-    "pma": ("EF v3.0", "particulate matter formation", "impact on human health"),
-    "ior": (
-        "EF v3.0",
-        "ionising radiation: human health",
-        "human exposure efficiency relative to u235",
-    ),
-    "fru": (
-        "EF v3.0",
-        "energy resources: non-renewable",
-        "abiotic depletion potential (ADP): fossil fuels",
-    ),
-    "mru": (
-        "EF v3.0",
-        "material resources: metals/minerals",
-        "abiotic depletion potential (ADP): elements (ultimate reserves)",
-    ),
-    "ldu": ("EF v3.0", "land use", "soil quality index"),
-    "wtu": (
-        "EF v3.0",
-        "water use",
-        "user deprivation potential (deprivation-weighted water consumption)",
-    ),
-    "etf": (
-        "EF v3.0",
-        "ecotoxicity: freshwater",
-        "comparative toxic unit for ecosystems (CTUe) ",
-    ),
-    "htc": (
-        "EF v3.0",
-        "human toxicity: carcinogenic",
-        "comparative toxic unit for human (CTUh) ",
-    ),
-    "htn": (
-        "EF v3.0",
-        "human toxicity: non-carcinogenic",
-        "comparative toxic unit for human (CTUh) ",
-    ),
+    "acd": ("EF 3.0 Method (adapted)", "Acidification"),
+    "ozd": ("EF 3.0 Method (adapted)", "Ozone depletion"),
+    "cch": ("EF 3.0 Method (adapted)", "Climate change"),
+    "ccb": ("EF 3.0 Method (adapted)", "Climate change - Biogenic"),
+    "ccf": ("EF 3.0 Method (adapted)", "Climate change - Fossil"),
+    "ccl": ("EF 3.0 Method (adapted)", "Climate change - Land use and LU change"),
+    "fwe": ("EF 3.0 Method (adapted)", "Eutrophication, freshwater"),
+    "swe": ("EF 3.0 Method (adapted)", "Eutrophication, marine"),
+    "tre": ("EF 3.0 Method (adapted)", "Eutrophication, terrestrial"),
+    "pco": ("EF 3.0 Method (adapted)", "Photochemical ozone formation"),
+    "pma": ("EF 3.0 Method (adapted)", "Particulate matter"),
+    "ior": ("EF 3.0 Method (adapted)", "Ionising radiation"),
+    "fru": ("EF 3.0 Method (adapted)", "Resource use, fossils"),
+    "mru": ("EF 3.0 Method (adapted)", "Resource use, minerals and metals"),
+    "ldu": ("EF 3.0 Method (adapted)", "Land use"),
+    "wtu": ("EF 3.0 Method (adapted)", "Water use"),
+    "etf": ("EF 3.0 Method (adapted)", "Ecotoxicity, freshwater - inorganics"),
+    "htc": ("EF 3.0 Method (adapted)", "Human toxicity, cancer"),
+    "htn": ("EF 3.0 Method (adapted)", "Human toxicity, non-cancer"),
 }
+
+# EF 3.0 adapted methods:
+# ('EF 3.0 Method (adapted)', 'Climate change')
+# ('EF 3.0 Method (adapted)', 'Ozone depletion')
+# ('EF 3.0 Method (adapted)', 'Ionising radiation')
+# ('EF 3.0 Method (adapted)', 'Photochemical ozone formation')
+# ('EF 3.0 Method (adapted)', 'Particulate matter')
+# ('EF 3.0 Method (adapted)', 'Human toxicity, non-cancer')
+# ('EF 3.0 Method (adapted)', 'Human toxicity, cancer')
+# ('EF 3.0 Method (adapted)', 'Acidification')
+# ('EF 3.0 Method (adapted)', 'Eutrophication, freshwater')
+# ('EF 3.0 Method (adapted)', 'Eutrophication, marine')
+# ('EF 3.0 Method (adapted)', 'Eutrophication, terrestrial')
+# ('EF 3.0 Method (adapted)', 'Ecotoxicity, freshwater')
+# ('EF 3.0 Method (adapted)', 'Land use')
+# ('EF 3.0 Method (adapted)', 'Water use')
+# ('EF 3.0 Method (adapted)', 'Resource use, fossils')
+# ('EF 3.0 Method (adapted)', 'Resource use, minerals and metals')
+# ('EF 3.0 Method (adapted)', 'Climate change - Fossil')
+# ('EF 3.0 Method (adapted)', 'Climate change - Biogenic')
+# ('EF 3.0 Method (adapted)', 'Climate change - Land use and LU change')
+# ('EF 3.0 Method (adapted)', 'Human toxicity, non-cancer - organics')
+# ('EF 3.0 Method (adapted)', 'Human toxicity, non-cancer - inorganics')
+# ('EF 3.0 Method (adapted)', 'Human toxicity, non-cancer - metals')
+# ('EF 3.0 Method (adapted)', 'Human toxicity, cancer - organics')
+# ('EF 3.0 Method (adapted)', 'Human toxicity, cancer - inorganics')
+# ('EF 3.0 Method (adapted)', 'Human toxicity, cancer - metals')
+# ('EF 3.0 Method (adapted)', 'Ecotoxicity, freshwater - organics')
+# ('EF 3.0 Method (adapted)', 'Ecotoxicity, freshwater - inorganics')
+# ('EF 3.0 Method (adapted)', 'Ecotoxicity, freshwater - metals')
+# ('EF 3.0 Method (adapted)', 'EF 3.0 normalization and weighting set')
 
 """Correspondance between the impact name we chose in our export (the trigrams) and the name in the Agribalyse_synthese.
 
