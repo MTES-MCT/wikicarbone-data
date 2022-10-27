@@ -86,3 +86,27 @@ Puis ouvrir un des liens affichés, par exemple :
 (si c'est lancé sur gitpod, il suffit de CMD/CTRL click sur le lien
 `http://localhost:8888/?token=...`, ou de cliquer sur "open in browser" dans la
 fenêtre de notification).
+
+## Installation alternative sur Mac OS X
+
+> Note: ces instructions sont dérivées de la procédure d'[installation documentée pour Brightway](https://2.docs.brightway.dev/installation.html).
+
+Installer [miniconda](https://docs.conda.io/en/latest/miniconda.html) via [homebrew](https://brew.sh/index_fr):
+
+```
+$ brew install miniconda
+```
+
+Initialiser miniconda pour votre shell (ici, `zsh`):
+
+```
+$ conda init zsh
+$ source ~/.zshrc
+```
+
+Installer les dépendances brightway2:
+
+```
+$ conda create -n bw2 -c conda-forge -c cmutel brightway2 jupyterlab
+$ conda activate bw2
+```

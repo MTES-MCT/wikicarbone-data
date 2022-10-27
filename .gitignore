@@ -1,5 +1,6 @@
 .vscode
 *.pyc
 .DS_Store
+.ipynb_checkpoints
 brightway/import_agb/agribalyse3_no_param.CSV
 brightway/export_agb/processes-no-impacts.json
