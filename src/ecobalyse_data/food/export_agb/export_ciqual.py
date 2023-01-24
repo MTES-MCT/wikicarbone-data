@@ -7,9 +7,8 @@ import json
 import argparse
 import brightway2 as bw
 from collections import defaultdict
-from impacts import impacts
+from ecobalyse_data.food.impacts import impacts
 import pandas as pd
-import re
 
 processes_kind = {
     # transformation
