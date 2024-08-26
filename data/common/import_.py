@@ -189,7 +189,7 @@ def import_simapro_csv(
         zf.extractall()
         unzipped = datapath[0:-4]
 
-    if "AGB3.1.1" in datapath:
+    if "AGB" in datapath:
         print("### Patching Agribalyse...")
         # `yield` is used as a variable in some Simapro parameters. bw2parameters cannot handle it:
         # (sed is faster than Python)

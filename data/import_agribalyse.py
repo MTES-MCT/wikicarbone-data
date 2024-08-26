@@ -16,7 +16,8 @@ from common.import_ import (
 )
 
 PROJECT = "default"
-AGRIBALYSE = "AGB3.1.1.20230306.CSV.zip"  # Agribalyse
+AGRIBALYSE31 = "AGB3.1.1.20230306.CSV.zip"  # Agribalyse 3.1
+AGRIBALYSE32 = "AGB32beta_08082024.CSV.zip"  # Agribalyse 3.2
 GINKO = "CSV_369p_et_298chapeaux_final.csv.zip"  # additional organic processes
 PASTOECO = [
     "CONVEN~1.CSV.zip",
@@ -206,13 +207,25 @@ if __name__ == "__main__":
     bw2io.bw2setup()
     add_missing_substances(PROJECT, BIOSPHERE)
 
-    # AGRIBALYSE
+    # AGRIBALYSE 3.1
     if (db := "Agribalyse 3.1.1") not in bw2data.databases:
         import_simapro_csv(
-            AGRIBALYSE,
+            AGRIBALYSE31,
             db,
             migrations=AGRIBALYSE_MIGRATIONS,
             excluded_strategies=EXCLUDED,
+            other_strategies=AGB_STRATEGIES,
+        )
+    else:
+        print(f"{db} already imported")
+
+    # AGRIBALYSE 3.2
+    if (db := "Agribalyse 3.2 beta 08/08/2024") not in bw2data.databases:
+        import_simapro_csv(
+            AGRIBALYSE32,
+            db,
+            migrations=AGRIBALYSE_MIGRATIONS,
+            excluded_strategies=EXCLUDED,  # + ["sp_allocate_products"],
             other_strategies=AGB_STRATEGIES,
         )
     else:
