@@ -175,6 +175,7 @@ def import_simapro_csv(
     dbname,
     biosphere=BIOSPHERE,
     migrations=[],
+    first_strategies=[],
     excluded_strategies=[],
     other_strategies=[],
     source=None,
@@ -221,11 +222,15 @@ def import_simapro_csv(
 
     print("### Applying strategies...")
     # exclude strategies/migrations
-    database.strategies = [
-        s
-        for s in database.strategies
-        if not any([e in repr(s) for e in excluded_strategies])
-    ] + other_strategies
+    database.strategies = (
+        first_strategies
+        + [
+            s
+            for s in database.strategies
+            if not any([e in repr(s) for e in excluded_strategies])
+        ]
+        + other_strategies
+    )
     database.apply_strategies()
     database.statistics()
     # try to link remaining unlinked technosphere activities

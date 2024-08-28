@@ -180,6 +180,19 @@ def remove_negative_land_use_on_tomato(db):
     return new_db
 
 
+def remove_some_processes(db):
+    """Some processes make the whole import fail
+    due to inability to parse the Input and Calculated parameters"""
+    new_db = []
+    for ds in db:
+        new_ds = copy.deepcopy(ds)
+        if ds.get("simapro metadata", {}).get("Process identifier") not in (
+            "EI3CQUNI000025017103662",
+        ):
+            new_db.append(new_ds)
+    return new_db
+
+
 GINKO_STRATEGIES = [
     remove_negative_land_use_on_tomato,
     remove_azadirachtine,
@@ -189,7 +202,9 @@ GINKO_STRATEGIES = [
         fields=("name", "unit"),
     ),
 ]
-AGB_STRATEGIES = [remove_negative_land_use_on_tomato]
+AGB_STRATEGIES = [
+    remove_negative_land_use_on_tomato,
+]
 
 if __name__ == "__main__":
     """Import Agribalyse and additional processes"""
@@ -225,7 +240,8 @@ if __name__ == "__main__":
             AGRIBALYSE32,
             db,
             migrations=AGRIBALYSE_MIGRATIONS,
-            excluded_strategies=EXCLUDED,  # + ["sp_allocate_products"],
+            first_strategies=[remove_some_processes],
+            excluded_strategies=EXCLUDED,
             other_strategies=AGB_STRATEGIES,
         )
     else:
