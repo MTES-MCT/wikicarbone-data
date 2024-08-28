@@ -1,2 +1,7 @@
-/*.csv
-/*.zip
+/data/*.csv
+/data/*.CSV
+/data/*.zip
+db.sqlite3
+__pycache__
+*.egg-info
+/.env
