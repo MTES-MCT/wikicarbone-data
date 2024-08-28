@@ -30,12 +30,12 @@ import pandas
 import pandas.io.formats.style
 from bw2data.utils import get_activity
 
-Illustration = open("/home/jovyan/ecobalyse/data/notebooks/bw2.svg").read()
+Illustration = open("/home/jovyan/ecobalyse-data/notebooks/bw2.svg").read()
 BIOSPHERE = "biosphere3"
 STATSTYLE = "<style>.details {background-color: #EEE; padding: 2em;}</style>"
 PROJECTS = [p.name for p in bw2data.projects]
 EF31 = "Environmental Footprint 3.1 (adapted) patch wtu"
-os.chdir("/home/jovyan/ecobalyse/data")
+os.chdir("/home/jovyan/ecobalyse-data")
 VISITED = []  # visited activities since the last search
 LIMIT = 100
 IMPACTS = {}

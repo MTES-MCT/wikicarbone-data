@@ -24,7 +24,8 @@ PROJECT = "default"
 # Agribalyse
 BIOSPHERE = "biosphere3"
 METHODNAME = "Environmental Footprint 3.1 (adapted) patch wtu"  # defined inside the csv
-METHODPATH = METHODNAME + ".CSV.zip"
+SUBDIR = "databases"
+METHODPATH = os.path.join(SUBDIR, METHODNAME + ".CSV.zip")
 
 # excluded strategies and migrations
 EXCLUDED_FOOD = [
@@ -45,7 +46,7 @@ def import_method(project, datapath=METHODPATH, biosphere=BIOSPHERE):
     # unzip
     with ZipFile(datapath) as zf:
         print("### Extracting the zip file...")
-        zf.extractall()
+        zf.extractall(path=SUBDIR)
         unzipped = datapath[0:-4]
 
     # projects.create_project(project, activate=True, exist_ok=True)

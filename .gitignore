@@ -1,6 +1,4 @@
-/data/*.csv
-/data/*.CSV
-/data/*.zip
+/databases
 db.sqlite3
 __pycache__
 *.egg-info
