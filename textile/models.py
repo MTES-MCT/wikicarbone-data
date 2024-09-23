@@ -71,6 +71,7 @@ class Process(Model):
 
     search = CharField(_("Brightway Search term"), max_length=200, blank=True)
     name = CharField(_("Name"), max_length=200)
+    displayName = CharField(_("Display Name"), max_length=200, blank=True)
     source = CharField(_("Source Database"), max_length=200)
     info = CharField(_("Informations"), max_length=200)
     unit = CharField(_("Unit"), max_length=50, choices=UNITS)
@@ -369,6 +370,7 @@ class Example(Model):
     price = FloatField(_("Price"), null=True)
     repairCost = FloatField(_("Repair Cost"), null=True, blank=True)
     traceability = BooleanField(_("Traceability Displayed?"), null=True)
+    upcycled = BooleanField(_("Upcycled?"), null=True)
     airTransportRatio = FloatField(_("Air Transport Ratio"), null=True)
 
     countrySpinning = CharField(_("Spinning Country"), max_length=50, choices=COUNTRIES)
