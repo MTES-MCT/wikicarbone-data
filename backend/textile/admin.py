@@ -1,6 +1,6 @@
 import json
 
-from backend.admin import admin_site
+from backoffice.admin import admin_site
 from django import forms
 from django.contrib import admin, messages
 from django.http import HttpResponseRedirect
