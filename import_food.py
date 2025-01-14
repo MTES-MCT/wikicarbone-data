@@ -16,6 +16,7 @@ from common.import_ import (
     add_missing_substances,
     import_simapro_csv,
 )
+from config import settings
 
 CURRENT_FILE_DIR = os.path.dirname(os.path.realpath(__file__))
 
@@ -25,8 +26,7 @@ DB_FILES_DIR = os.getenv(
 )
 
 PROJECT = "default"
-AGRIBALYSE31 = "AGB3.1.1.20230306.CSV.zip"  # Agribalyse 3.1
-AGRIBALYSE32 = "AGB32beta_08082024.CSV.zip"  # Agribalyse 3.2
+AGRIBALYSE32 = "AGB32_final.CSV.zip"  # Agribalyse 3.2
 GINKO = "CSV_369p_et_298chapeaux_final.csv.zip"  # additional organic processes
 PASTOECO = "pastoeco.CSV.zip"
 CTCPA = "Export emballages_PACK AGB_CTCPA.CSV.zip"
@@ -245,7 +245,7 @@ GINKO_STRATEGIES = [
     remove_azadirachtine,
     functools.partial(
         link_technosphere_by_activity_hash,
-        external_db_name="Agribalyse 3.1.1",
+        external_db_name=settings.bw.agribalyse,
         fields=("name", "unit"),
     ),
 ]
@@ -267,20 +267,8 @@ if __name__ == "__main__":
     bw2io.bw2setup()
     add_missing_substances(PROJECT, BIOSPHERE)
 
-    # AGRIBALYSE 3.1.1
-    if (db := "Agribalyse 3.1.1") not in bw2data.databases:
-        import_simapro_csv(
-            join(DB_FILES_DIR, AGRIBALYSE31),
-            db,
-            migrations=AGRIBALYSE_MIGRATIONS,
-            excluded_strategies=EXCLUDED,
-            other_strategies=AGB_STRATEGIES,
-        )
-    else:
-        print(f"{db} already imported")
-
     # AGRIBALYSE 3.2
-    if (db := "Agribalyse 3.2 beta 08/08/2024") not in bw2data.databases:
+    if (db := "Agribalyse 3.2") not in bw2data.databases:
         import_simapro_csv(
             join(DB_FILES_DIR, AGRIBALYSE32),
             db,
@@ -302,7 +290,7 @@ if __name__ == "__main__":
             other_strategies=[
                 functools.partial(
                     link_technosphere_by_activity_hash,
-                    external_db_name="Agribalyse 3.1.1",
+                    external_db_name=settings.bw.agribalyse,
                     fields=("name", "unit"),
                 )
             ],
